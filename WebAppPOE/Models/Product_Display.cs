@@ -22,9 +22,10 @@ namespace WebAppPOE.Models
             ProductAvailability = availability;
         }
 
+        //method for displaying the products
         public static List<Product_Display> SelectProducts()
         {
-            List<Product_Display> products = new List<Product_Display>();
+            List<Product_Display> products = new List<Product_Display>();//list is created
 
             string con_string = "Server=tcp:webbapp2.database.windows.net,1433;Initial Catalog=myDatabase;Persist Security Info=False;User ID=Nater;Password=UNK@2520;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
             using (SqlConnection con = new SqlConnection(con_string))

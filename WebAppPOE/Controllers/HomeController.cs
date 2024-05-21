@@ -16,12 +16,12 @@ namespace WebAppPOE.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()//Add index view
         {
-            // Retrieve all products from the database
+            // Get all products from the database
             List<Product_Table> products = Product_Table.GetAllProducts();
 
-            // Retrieve userID from session
+            // Get userID from session
             int? userID = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
 
             // Pass products and userID to the view
@@ -30,19 +30,25 @@ namespace WebAppPOE.Controllers
             return View();
         }
 
+        //Add Mywork view
         public IActionResult MyWork()
         {
             return View();
         }
 
+        //add about us view
         public IActionResult AboutUs()
         {
             return View();
         }
+
+        //add contact view
         public IActionResult Contact()
         {
             return View();
         }
+
+        //Add privacy view
         public IActionResult Privacy()
         {
             return View();

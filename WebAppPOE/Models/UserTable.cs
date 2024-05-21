@@ -15,6 +15,7 @@ namespace WebAppPOE.Models
 
         public string userEmail { get; set; }
 
+        //the method for inserting data regarding the user
         public int insert_User(UserTable m)
         {
 

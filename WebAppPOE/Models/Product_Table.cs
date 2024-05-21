@@ -18,6 +18,7 @@ namespace WebAppPOE.Models
 
         public int ProductAvailability { get; set; }
 
+        //method to insert product details or add a product
         public int insert_product(Product_Table p)
         {
 
@@ -25,6 +26,7 @@ namespace WebAppPOE.Models
             {
                 string sql = "INSERT INTO productTable (productName, productPrice, productCategory, productAvailability) VALUES (@Name, @Price, @Category, @Availability)";
                 SqlCommand cmd = new SqlCommand(sql, con);
+                //the userr inserts or adds product name, pice, category and availabilty
                 cmd.Parameters.AddWithValue("@Name", p.ProductName);
                 cmd.Parameters.AddWithValue("@Price", p.ProductPrice);
                 cmd.Parameters.AddWithValue("@Category", p.ProductCategory);
@@ -37,12 +39,12 @@ namespace WebAppPOE.Models
             catch (Exception e)
             {
                 // Log the exception or handle it appropriately
-                // For now, rethrow the exception
                 throw e;
             }
 
         }
 
+        //The method to get all product from the Product_Table
         public static List<Product_Table> GetAllProducts()
         {
             List<Product_Table> products = new List<Product_Table>();
@@ -56,6 +58,7 @@ namespace WebAppPOE.Models
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    //Get product id, name price, category and availability and save that info as 1 product
                     Product_Table product = new Product_Table();
                     product.ProductID = Convert.ToInt32(reader["ProductID"]);
                     product.ProductName = reader["ProductName"].ToString();
@@ -67,7 +70,7 @@ namespace WebAppPOE.Models
                 }
             }
 
-            return products;
+            return products;//get product
         }
     }
 }

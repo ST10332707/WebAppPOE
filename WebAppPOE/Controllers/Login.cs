@@ -23,13 +23,12 @@ namespace WebAppPOE.Controllers
                 // Store userID in session
                 HttpContext.Session.SetInt32("UserID", userID);
 
-                // User found, proceed with login logic (e.g., set authentication cookie)
-                // For demonstration, redirecting to a dummy page
+                // User found, proceed with login logic
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                // User not found, handle accordingly (e.g., show error message)
+                // User not found
                 return View("LoginFailed");
             }
         }
