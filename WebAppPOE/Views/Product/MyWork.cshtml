@@ -4,15 +4,23 @@
     ViewData["Title"] = "MyWork";
 }
 
-<h1>MyWork</h1>
+<style>
+    body {
+        background-image: url('/image/image1.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
 
 <body>
-    <form action="MyWork" method="post">
-        <p>Add new products</p>
-        <input type="text" name="Name" placeholder="Name" required>
-        <input type="text" name="Price" placeholder="Price" required>
-        <input type="text" name="Category" placeholder="Category" required>
-        <input type="text" name="Availability" placeholder="Availability" required>
+    <form asp-controller="Product" asp-action="MyWork" method="post">
+        <h2>Add new products:</h2>
+        <input type="text" name="ProductName" placeholder="Name" required>
+        <input type="text" name="ProductPrice" placeholder="Price" required>
+        <input type="text" name="ProductCategory" placeholder="Category" required>
+        <input type="text" name="ProductAvailability" placeholder="Availability" required>
         <button type="submit">Submit</button>
     </form>
 </body>

@@ -7,10 +7,18 @@
 }
 
 <div class="text-center">
-    <h2>Welcome to KhumaloCraft!</h2>
+    <h1>Welcome to KhumaloCraft!</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <img src="~/image/main-qimg-d4f72740e968701c017fd7d0071bc2f0.webp" />
 </div>
+
+<style>
+    body {
+        background-image: url('/image/image1.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
 
 @if (userID != null)
 {
@@ -39,7 +47,7 @@
                 <td>@product.ProductAvailability</td>
                 <td>
                     <form asp-controller="Transaction" asp-action="PlaceOrder" method="post">
-                        <input type="hidden" name="userID" value="@userID" />
+                        <input type="hidden" name="UserID" value="@userID" />
                         <input type="hidden" name="productID" value="@product.ProductID" />
                         <button type="submit">Place Order</button>
                     </form>

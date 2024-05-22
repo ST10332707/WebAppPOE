@@ -10,8 +10,8 @@ namespace WebAppPOE.Controllers
         [HttpPost]
         public ActionResult MyWork(Product_Table products)
         {
-            var result2 = prodtable.insert_product(products);
-            return RedirectToAction("Index", "Home");
+            var result2 = prodtable.insert_product(products);//insert products into database
+            return RedirectToAction("Index", "Home");//Redirect the user back to the home page 
         }
 
         [HttpGet]

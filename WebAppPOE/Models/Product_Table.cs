@@ -24,7 +24,7 @@ namespace WebAppPOE.Models
 
             try
             {
-                string sql = "INSERT INTO productTable (productName, productPrice, productCategory, productAvailability) VALUES (@Name, @Price, @Category, @Availability)";
+                string sql = "INSERT INTO Product_Table (ProductName, ProductPrice, ProductCategory, ProductAvailability) VALUES (@Name, @Price, @Category, @Availability)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 //the userr inserts or adds product name, pice, category and availabilty
                 cmd.Parameters.AddWithValue("@Name", p.ProductName);
@@ -62,11 +62,11 @@ namespace WebAppPOE.Models
                     Product_Table product = new Product_Table();
                     product.ProductID = Convert.ToInt32(reader["ProductID"]);
                     product.ProductName = reader["ProductName"].ToString();
-                    product.ProductPrice = Convert.ToInt32(reader["productPrice"]);
+                    product.ProductPrice = Convert.ToInt32(reader["ProductPrice"]);
                     product.ProductCategory = reader["ProductCategory"].ToString();
-                    product.ProductAvailability = Convert.ToInt32(reader["productAvailability"]);
+                    product.ProductAvailability = Convert.ToInt32(reader["ProductAvailability"]);
 
-                    products.Add(product);
+                    products.Add(product);//add product to product list(products)
                 }
             }
 

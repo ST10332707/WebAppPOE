@@ -1,7 +1,27 @@
-﻿@*
+﻿@model WebAppPOE.Models.UserTable
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     ViewData["Title"] = "About Us";
 }
 <h1>@ViewData["Title"]</h1>
+<style>
+    body {
+        background-color:black;
+        background-image: url('/image/image2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<body>
+    <form asp-controller="User" asp-action="AboutUs" method="post">
+        <h2>Please enter Username, Surname and Email to Sign Up:</h2>
+        <input type="text" name="UserName" placeholder="Name" required>
+        <input type="text" name="UserSurname" placeholder="Surname" required>
+        <input type="text" name="UserEmail" placeholder="example@gmail.com" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>

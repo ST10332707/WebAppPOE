@@ -7,7 +7,7 @@ namespace WebAppPOE.Controllers
     public class TransacctionController : Controller
     {
         [HttpPost]
-        public ActionResult AddTransaction(int userID, int productID)
+        public ActionResult AddTransaction(int UserID, int ProductID)
         {
             try
             {
@@ -15,14 +15,14 @@ namespace WebAppPOE.Controllers
                 using (SqlConnection con = new SqlConnection(Product_Table.con_string))
                 {
                     // Define the SQL query to insert a new record into the transactionTable
-                    string sql = "INSERT INTO Transaction_Table (userID, productID) VALUES (@UserID, @ProductID)";
+                    string sql = "INSERT INTO Transaction_Table (UserID, ProductID) VALUES (@UserID, @ProductID)";
 
                     // Create a new instance of SqlCommand with the SQL query and SqlConnection
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         // Add parameters to the SqlCommand for userID and productID
-                        cmd.Parameters.AddWithValue("@UserID", userID);
-                        cmd.Parameters.AddWithValue("@ProductID", productID);
+                        cmd.Parameters.AddWithValue("@UserID", UserID);
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
 
                         // Open the SqlConnection
                         con.Open();
