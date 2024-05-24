@@ -30,7 +30,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
+            <th1>Name</th1>
             <th>Price</th>
             <th>Category</th>
             <th>Availability</th>
@@ -48,7 +48,7 @@
                 <td>
                     <form asp-controller="Transaction" asp-action="PlaceOrder" method="post">
                         <input type="hidden" name="UserID" value="@userID" />
-                        <input type="hidden" name="productID" value="@product.ProductID" />
+                        <input type="hidden" name="ProductID" value="@product.ProductID" />
                         <button type="submit">Place Order</button>
                     </form>
                 </td>

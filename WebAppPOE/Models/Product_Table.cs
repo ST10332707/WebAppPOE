@@ -16,7 +16,7 @@ namespace WebAppPOE.Models
 
         public string ProductCategory { get; set; }
 
-        public int ProductAvailability { get; set; }
+        public string ProductAvailability { get; set; }
 
         //method to insert product details or add a product
         public int insert_product(Product_Table p)
@@ -64,7 +64,7 @@ namespace WebAppPOE.Models
                     product.ProductName = reader["ProductName"].ToString();
                     product.ProductPrice = Convert.ToInt32(reader["ProductPrice"]);
                     product.ProductCategory = reader["ProductCategory"].ToString();
-                    product.ProductAvailability = Convert.ToInt32(reader["ProductAvailability"]);
+                    product.ProductAvailability = reader["ProductAvailability"].ToString();
 
                     products.Add(product);//add product to product list(products)
                 }

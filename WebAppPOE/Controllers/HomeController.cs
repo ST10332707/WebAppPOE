@@ -16,6 +16,7 @@ namespace WebAppPOE.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
 
+        //Display product stored in the database
         public IActionResult Index()//Add index view
         {
             // Get all products from the database
