@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace WebAppPOE.Models
 {
-    public class Login_Model : Controller
+    public class Login_Model
     {
         
         public static string con_string = "Server=tcp:webbapp2.database.windows.net,1433;Initial Catalog=myDatabase;Persist Security Info=False;User ID=Nater;Password=UNK@2520;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";

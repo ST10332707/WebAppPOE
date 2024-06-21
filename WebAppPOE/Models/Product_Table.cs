@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using System.Data.SqlClient;
 
 namespace WebAppPOE.Models
 {
-    public class Product_Table : Controller
+    public class Product_Table
     {
         public static string con_string = "Server=tcp:webbapp2.database.windows.net,1433;Initial Catalog=myDatabase;Persist Security Info=False;User ID=Nater;Password=UNK@2520;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
         public static SqlConnection con = new SqlConnection(con_string);
@@ -21,6 +22,7 @@ namespace WebAppPOE.Models
         //method to insert product details or add a product
         public int insert_product(Product_Table p)
         {
+            //string con_string = "Server=tcp:webbapp2.database.windows.net,1433;Initial Catalog=myDatabase;Persist Security Info=False;User ID=Nater;Password=UNK@2520;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
 
             try
             {
